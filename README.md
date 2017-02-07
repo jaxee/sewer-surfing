@@ -1,5 +1,4 @@
 # sewer-surfing
-Sewer Surfing
 Interactive website describing surfing on the Ottawa River
 
 Setup:
