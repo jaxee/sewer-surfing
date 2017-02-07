@@ -1,0 +1,12 @@
+{
+  "name": "IMD_4005",
+  "version": "0.0.0",
+  "description": "IMD4005 Website",
+  "author": "Jackie Ellis",
+  "bin": {
+    "module-name": "./bin/module-name"
+  },
+  "dependencies": {
+    "mime-types": "*"
+  }
+}
