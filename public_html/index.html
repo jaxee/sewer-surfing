@@ -4,9 +4,129 @@
 		<meta charset="utf-8">
 		<title> Sewer Surfing </title>
 		<link rel="stylesheet" href="./main.css">
+		<link rel="icon" type="image/png" href="Images/favicon.ico">
+
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+		
+		<script src="Script/jquery.scrollify.js"></script>
+		<script>
+			$( document ).ready(function() {
+
+				$("#splash").click(function() {
+					$.scrollify.move("#home");
+				});
+
+				$("#2").click(function() {
+					$.scrollify.move("#michael");
+				});
+
+				$("#3").click(function() {
+					$.scrollify.move("#sub");
+				});
+
+				$("#4").click(function() {
+					$.scrollify.move("#sons");
+				});
+
+				$("#5").click(function() {
+					$.scrollify.move("#surf");
+				});
+
+				$("#6").click(function() {
+					$.scrollify.move("#community");
+				});
+
+				$(function backToTop() {
+					$('.navigation').css("display", "none");
+					window.location.replace("http://localhost:4005/#home");
+				});
+
+				$(function() {
+					$.scrollify({
+						section : ".scrollT",
+						sectionName : "section-name"
+					});
+
+					$(function() {
+					    $(window).scroll(function() {
+
+					        if($(this).scrollTop() >= 500) {
+					            $('.navigation').fadeIn(500);
+					        } else {
+					            $('.navigation').fadeOut(300);
+					            $('.navigation').css("display", "none");
+					        }
+					    });
+					});
+				});
+			})
+		</script>
 	</head>
-	<body>
-		<h1> Sewer Surfing </h1>
+	<body onunload="backToTop()">
+
+		<div class="navigation"> 
+			<span id="splash"> <img class="logo" src="Images/Logo.png" /> </span>
+			<span class="mainPages">
+				<span id="2"> Michael's Story </span>
+				<span id="3"> Sub Zero Surf Side </span>
+				<span id="4"> A Son's Sacrifice </span>
+				<span id="5"> Ottawa Surf Jam </span>
+				<span id="6"> A Community's Curiosity </span>
+			</span>
+		</div>
+
+		<section id="homePage" class="scrollT" data-section-name="home">
+			<h1 id="check"> Sewer &nbsp; Surfing </h1>
+			<div class="scrollDown"><div class="bounce"> <img src="Images/arrow.png" class="arrow" /></div></div>
+			<p class="credit"> Video courtesy of <a href="https://www.youtube.com/channel/UCwr3SxwoR0PcpWZaX0trkNQ" target="_blank">Skyward Kick Production Blog</a></p>
+			<div id="transparentBG"></div>
+			<video playsinline autoplay muted loop id="bgvid">
+			    <source src="Videos/homePage.webm" type="video/webm">
+			    <source src="Videos/homePage.mp4" type="video/mp4">
+			</video>
+		</section>
+		<section id="michaelsStory" class="scrollT" data-section-name="michael">
+
+			<h2> Michael's Story </h2>
+			<div class="banner"> </div>
+
+			<div class="container-fluid">
+	  			<div class="row">
+  					<div class="col-md-8 col-md-offset-2">
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum lacinia tortor at ipsum ultrices luctus vitae eu massa. Ut felis ante, vestibulum sit amet purus et, tincidunt consequat massa. Donec eleifend vel neque sed eleifend. Duis tincidunt gravida purus, sed hendrerit dolor ornare eu. Donec fermentum et orci ac consectetur. Nullam consequat dui et eleifend scelerisque. Vivamus mattis lectus vitae justo blandit accumsan. Duis vel massa blandit, cursus arcu vitae, sagittis metus. Quisque sodales metus non justo vulputate, id sollicitudin mi tempor. Sed semper eleifend scelerisque. Sed malesuada mollis ipsum, et porta nulla ornare laoreet. Sed non ante euismod, tempor sapien non, blandit tortor. Sed at diam dapibus, porta leo at, pharetra mauris. Morbi dui odio, maximus in nisi et, finibus gravida dui. Proin non rhoncus ligula. </p>
+					<p>Integer eleifend auctor lectus. Nam ornare, lectus sed tempus gravida, felis urna venenatis tortor, nec rutrum augue sem vel lectus. Etiam eu erat a felis bibendum accumsan ornare quis quam. Phasellus iaculis feugiat facilisis. Mauris vel pellentesque tortor. Aliquam vel erat nunc. Phasellus accumsan molestie turpis vel porttitor. Nunc eu dictum metus, ut consequat lectus. Maecenas auctor pellentesque auctor. In vitae pharetra erat. Aliquam interdum suscipit metus vitae tristique. Fusce euismod iaculis quam, at porttitor tellus efficitur vitae. In eu posuere sem, vel volutpat elit. Nulla accumsan pulvinar augue, in varius massa viverra vitae. </p>
+
+					<p>Quisque efficitur risus nibh, vel aliquam nisi tempus nec. Pellentesque vel eleifend quam, vel pharetra nisi. Duis elit diam, pharetra eget nibh quis, hendrerit iaculis odio. Vivamus ac ante euismod, dignissim lacus vel, molestie justo. Quisque elementum tellus quis arcu ullamcorper consequat. Praesent convallis id ipsum sit amet rhoncus. Fusce eleifend ligula ac lobortis sodales. Vivamus luctus mauris vel eros suscipit, vitae feugiat tellus ornare. Nam sed orci porta, sollicitudin augue vitae, lacinia nulla. Donec tincidunt lectus vel elit aliquet, nec eleifend eros condimentum. Suspendisse id metus tincidunt libero placerat posuere. Maecenas finibus elementum blandit. </p>
+
+					<p>Donec tellus nisi, molestie in sem in, mollis elementum justo. Donec sapien lacus, ullamcorper et quam et, posuere pharetra purus. Cras pellentesque ultricies justo eu tristique. Nam porttitor porta ligula vitae dignissim. Donec id ex id lorem dapibus cursus. Praesent varius aliquam turpis. Vivamus sed arcu sodales diam condimentum porta vitae ac lectus. Aliquam imperdiet, nibh in lobortis ornare, massa neque finibus sem, at faucibus erat orci a dolor. Suspendisse viverra sem in lacus tempus tincidunt. Nunc aliquet augue dignissim tincidunt sollicitudin. Ut pretium purus ac molestie aliquet. Nulla quis scelerisque lorem. Ut eros mi, sodales at sagittis vitae, volutpat sit amet neque. Curabitur ac sagittis ipsum. Morbi molestie sollicitudin ullamcorper. </p>
+
+					<p>Proin posuere faucibus dolor nec ornare. Integer a tellus elementum, vestibulum est eu, lobortis sapien. Nunc ut nisi vitae diam rhoncus dictum sit amet id nisi. Mauris quis urna eu nibh venenatis auctor. Maecenas consequat ultricies tortor, non accumsan metus efficitur ut. Vivamus faucibus ante eu euismod dictum. Quisque at ante ac urna tristique dictum. Nulla posuere luctus viverra. Aliquam erat quam, sodales ut congue vel, facilisis eu eros. Proin semper ligula ut fermentum dapibus. Nullam vehicula tristique lobortis. Praesent faucibus nunc a sapien posuere, non sollicitudin ante ornare. Nullam non commodo magna. In odio metus, maximus sed egestas ut, aliquet dapibus sapien. Phasellus vel fringilla enim. </p>
+
+					</div>
+			  </div>
+			</div>
+		</section>
+		<section id="subZero" class="scrollT" data-section-name="sub">
+			<h2> Sub Zero Surf Side </h2>
+			<div class="banner"> </div>
+
+		</section>
+		<section id="sonsSacrifice" class="scrollT" data-section-name="sons">
+			<h2> A Son's Sacrifice </h2>
+			<div class="banner"> </div>
+
+		</section>
+		<section id="surfJam" class="scrollT" data-section-name="surf">
+			<h2> The Second Annual Ottawa Surf Jam </h2>
+			<div class="banner"> </div>
+
+		</section>
+		<section id="communityCuriosity" class="scrollT" data-section-name="community">
+			<h2> A Community's Curiosity </h2>
+			<div class="banner"> </div>
+
+		</section>
 	</body>
 </html>

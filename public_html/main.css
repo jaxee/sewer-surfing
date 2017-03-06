@@ -1,7 +1,192 @@
 html, body {
 	width: 100%;
+	padding:0px;
+	margin:0px;
+	height:100%;
+	font-family: 'robotoLight' !important;
 }
 
-h1 {
+h1, h2{
 	text-align:center;
+	font-family:'robotoBold' !important;
+}
+
+h2 {
+	margin-bottom:30px !important;
+	margin-top:130px !important;
+}
+
+a {
+	text-decoration:underline !important;
+}
+
+@font-face {
+    font-family: 'homePage';
+    src: url('Fonts/Basterds.ttf');
+}
+
+@font-face {
+    font-family: 'roboto';
+    src: url('Fonts/Roboto-Medium.ttf');
+}
+
+@font-face {
+    font-family: 'robotoBold';
+    src: url('Fonts/Roboto-Bold.ttf');
+}
+
+@font-face {
+    font-family: 'robotoLight';
+    src: url('Fonts/Roboto-Light.ttf');
+}
+
+@font-face {
+    font-family: 'robotoItalic';
+    src: url('Fonts/Roboto-Italic.ttf');
+}
+
+.navigation {
+	width:100%;
+	height:105px;
+	background-color:#545454;
+	color:white;
+	position:fixed;
+	z-index:9999;
+	box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
+}
+
+.mainPages span {
+	margin-right:80px;
+}
+
+
+.mainPages span:hover {
+	color:gray;
+}
+.logo {
+	width:6%;
+	margin:10px;
+	margin-right:100px;
+}
+
+section {
+    display: block;
+    width:100%;
+    overflow:auto;
+    border-style: solid;
+    border-width: 3px;
+}
+
+.banner {
+	width:100%;
+	height:300px;
+	background-color:lightgrey;
+	margin-bottom:30px;
+}
+
+.scrollDown {
+	position:absolute;
+	top:60%;
+	left:50%;
+}
+
+.bounce {
+  position:absolute;
+  left:50%;
+  bottom:0px;
+  margin-top:-25px;
+  margin-left:-25px;
+  height:100px;
+  width:100px;
+  color:white;
+  z-index:9996;
+  -webkit-animation:bounce 2s infinite;
+}
+
+.arrow {
+	width:70%;
+}
+
+#homePage h1{
+	font-family:'homePage' !important;
+	font-size:80px;
+	z-index: 9998;
+	color:white;
+	position:absolute;
+	margin-left: auto auto;
+	left: 0;
+	right: 0;
+	top:150px;
+}
+
+.credit {
+	color:white;
+	position:absolute;
+	z-index:9997;
+	bottom:0px;
+	right:20px;
+}
+
+.credit a {
+	color:white;
+}
+
+#homePage video#bgvid {
+	position: absolute; right: 0; bottom: 0;
+	min-width: 100%; min-height: 100%;
+	width: auto; height: auto; z-index: -100;
+	background: no-repeat;
+	background-size: cover;
+}
+
+#homePage #transparentBG {
+	background-color: black;
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding:0;
+	opacity: 0.4;
+	z-index:-1;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-20px);
+  }
+  60% {
+    transform: translateY(-10px);
+  }
+}
+
+#michaelsStory {
+	background-color:white;
+	height:1300px !important;
+}
+
+#subZero {
+	background-color:white;
+}
+
+#sonsSacrifice {
+	background-color:white;
+}
+
+#surfJam {
+	background-color:white;
+}
+
+#communityCuriosity {
+	background-color:white;
+}
+
+@media screen and (max-device-width: 800px) {
+    html {
+         /*background: url(polina.jpg) #000 no-repeat center center fixed;*/
+    }
+    #bgvid {
+        display: none;
+    }
 }
