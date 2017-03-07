@@ -163,7 +163,20 @@ section {
 
 #michaelsStory {
 	background-color:white;
-	height:1300px !important;
+	height:2000px !important;
+}
+
+#map {
+    height: 80%;
+    max-width:70%;
+    max-height:50%;
+    margin:40px auto;
+}
+
+.popUpImg {
+	float:left;
+	width:20%;
+	margin-right:20px;
 }
 
 #subZero {
