@@ -13,7 +13,6 @@ h1, h2{
 
 h2 {
 	margin-bottom:30px !important;
-	margin-top:130px !important;
 }
 
 a {
@@ -82,6 +81,7 @@ section {
 	height:300px;
 	background-color:lightgrey;
 	margin-bottom:30px;
+	margin-top:105px;
 }
 
 .scrollDown {
@@ -181,14 +181,19 @@ section {
 
 #subZero {
 	background-color:white;
-}
-
-#sonsSacrifice {
-	background-color:white;
+	height:1500px !important;
 }
 
 #surfJam {
 	background-color:white;
+}
+
+#equipment {
+	width:75%;
+	height:250px;
+	display:block;
+	margin:40px auto;
+	background-color:grey;
 }
 
 #communityCuriosity {
