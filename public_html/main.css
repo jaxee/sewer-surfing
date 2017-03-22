@@ -50,15 +50,24 @@ a {
 }
 
 
-#splash {
+#splash{
 	position:fixed;
 	z-index:1000000;
 	top:7px;
 	left:45%;
+	width:10%;
 }
 
 .logo {
-	width:35%;
+	width:100%;
+}
+
+.logo:hover{
+	width:110%;
+}
+
+#splash:hover{
+	left:44.5%;
 }
 
 .navigation {
@@ -90,8 +99,7 @@ a {
 
 
 .mainPages span:hover {
-	color:gray;
-	text-decoration-style: wavy;
+	text-decoration: underline;
 }
 
 section {
@@ -193,7 +201,7 @@ section {
 
 #michaelsStory {
 	background-color:white;
-	height:2000px !important;
+	height:2700px !important;
 }
 
 #map {
@@ -211,12 +219,12 @@ section {
 
 #subZero {
 	background-color:white;
-	height:2200px !important;
+	height:1700px !important;
 }
 
 #surfJam {
 	background-color:white;
-	height:1600px !important;
+	height:1900px !important;
 }
 
 #equipment {
@@ -229,6 +237,7 @@ section {
 
 #communityCuriosity {
 	background-color:white;
+	height:2600px !important;
 }
 
 @media screen and (max-device-width: 800px) {
