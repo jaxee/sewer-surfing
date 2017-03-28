@@ -1,476 +1,347 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<title> Sewer Surfing </title>
-		<link rel="stylesheet" href="./main.css">
-		<link rel="icon" type="image/png" href="Images/favicon.ico">
-
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
-		<script src="Script/jquery.scrollify.js"></script>
-		<script>
-			$( document ).ready(function() {
-
-				var sections = ["michaelsStory", "subZero", "surfJam", "communityCuriosity"];
-
-				$(".michaelsStory").addClass("selected");
-
-				$("#splash").click(function() {
-					$.scrollify.move("#home");
-				});
-
-				$(".michaelsStory").click(function() {
-					$.scrollify.move("#michael");
-				});
-
-				$(".subZero").click(function() {
-					$.scrollify.move("#sub");
-				});
-
-				$(".surfJam").click(function() {
-					$.scrollify.move("#surf");
-				});
-
-				$(".communityCuriosity").click(function() {
-					$.scrollify.move("#community");
-				});
-
-				$(function backToTop() {
-					$('.navigation').css("display", "none");
-					$('.logo').css("display", "none");
-					window.location.replace("http://localhost:4005/#home");
-				});
-
-				$(function() {
-					$.scrollify({
-						section : ".scrollT",
-						sectionName : "section-name",
-						after:function() {
-							var current = $.scrollify.current();
-							changeNav(current[0].id);
-						}
-					});
-
-					function changeNav(scrolledID){
-						for(var i in sections){
-							var el = document.getElementsByClassName(sections[i]);
-
-							if(sections[i] == scrolledID){
-								$(el).addClass("selected");
-								continue;
-							}
-							
-							$(el).removeClass("selected");
-						}
-					}
-
-					$(function() {
-						$(window).scroll(function() {
-							var current = $.scrollify.current();
-
-							if (current[0].id == "home") {
- 									$('.navigation').fadeOut(300);
-						            $('.navigation').css("display", "none");
-						            $('.logo').fadeOut(300);
-						            $('.logo').css("display", "none")
-						    } else {
-						    	if($(this).scrollTop() >= 500) {
-						            $('.navigation').fadeIn(500);
-						            $('.logo').fadeIn(500);
-						        } else {
-						            $('.navigation').fadeOut(300);
-						            $('.navigation').css("display", "none");
-						            $('.logo').fadeOut(300);
-						            $('.logo').css("display", "none")
-						        }
-						    }
-					    });
-					});
-				});
-			});
-		</script>
-	</head>
-	<body onunload="backToTop()">
-
-		<div id="splash"><img class="logo" src="Images/Logo.png"/></div>
-		<div class="navigation">
-			<span class="mainPages">
-				<div class="row">
-					<div class="col-md-5">
-						<span class="michaelsStory">Michael's Story</span>
-						<span class="subZero">Sub Zero Surf Side</span>
-					</div>
-					<div class="col-md-2"></div>
-					<div class="col-md-5">
-						<span class="surfJam">Ottawa Surf Jam</span>
-						<span class="communityCuriosity">A Community's Curiosity</span>
-					</div>
-				</div>
-			</span>
-		</div>
-
-		<section id="homePage" class="scrollT" data-section-name="home">
-			<h1 id="check"> Sewer &nbsp; Surfing </h1>
-			<div class="scrollDown"><div class="bounce"> <img src="Images/arrow.png" class="arrow" /></div></div>
-			<p class="credit"> Video courtesy of <a href="https://www.youtube.com/channel/UCwr3SxwoR0PcpWZaX0trkNQ" target="_blank">Skyward Kick Production Blog</a></p>
-			<div id="transparentBG"></div>
-			<video playsinline autoplay muted loop id="bgvid">
-			    <source src="Videos/homePage.webm" type="video/webm">
-			    <source src="Videos/homePage.mp4" type="video/mp4">
-			</video>
-		</section>
-		<section id="michaelsStory" class="scrollT" data-section-name="michael">
-			<div class="banner"> </div>
-			<h2> Michael's Story </h2>
-
-			<div class="container-fluid">
-	  			<div class="row">
-  					<div class="col-md-6 col-md-offset-3" style="position:absolute; max-width:100%; height:100%">
-					
-					<p> Michael Billinger walks to the edge of the water. It’s minus 15 degrees, freezing to most, but the water level is high and that’s all that matters to him. </p>
-
-					<p> He steps into the Ottawa River, holding his surf board by his side, takes three steps and launches himself, stomach flat to the board while he paddles out. </p>
-
-					<p>He holds onto the wake cord and pulls himself up until he has his balance, then let’s go — he’s riding the sewer wave.</p>
-
-					<p>The sewer wave is one of three major waves Ottawa river surfers ride, located on the Gatineau side of the Ottawa River. It received its name due to being formed by running water splashing over a sewer drain near the shore. </p>
-
-					<p>The sewer wave is known as the easiest, one that beginners tend to love. It’s proximity to the shore makes it the most accessible to amateurs. </p>
-
-					<p>Along with the sewer wave there is Bate Island, also referred to as the Champlain Bridge wave. Billinger said the Bate Island wave is for experts only, as it is the most difficult. </p>
-
-					<p>The final wave is the desert wave also known as dessert wave. Billinger claims it is called the dessert because it’s formed from the rolling rapids of the Bate Island and is almost like a treat after the main meal at Bate.</p> 
-
-					<div id="map"></div>
-
-					<p>“The story goes that it’s actually dessert wave because once you go through the rapids at Bate Island, you keep going and it’s like dessert,” he said. “It’s like icing on the cake because it’s a really big nice wave.”</p>
-
-					<p>Billinger is one of the veterans who surf the Ottawa River, discovering it 10 years ago. However, his journey with surfing didn’t start in Ottawa, it didn’t even start in North America.</p>
-
-					<p>Billinger learned to surf in Argentina, and he still remembers his first wave he rode — he said the feeling was irreplaceable.</p>
-
-					<p>“Especially when you get one on your own, you’re just hooked, just totally hooked,” Billinger said with a smile.</p>
-
-					<p>Billinger moved to Edmonton after getting back from Argentina where he was surprised to find he could continue surfing.</p>
-
-					<p>“There’s a really dedicated surf community in Edmonton,” he said.</p>
-
-					<p>This was where Billinger first tried river surfing, similar but different from ocean surfing. While ocean surfing has recurring waves, river surfing relies on one constantly forming wave.</p>
-
-					<p>The sport was first documented in Munich, Germany in the 1970s. The city embraces this history as it has a wave at the airport that passengers can surf on.</p>
-
-					<p>Billinger said Edmonton’s surf community is what Ottawa strives to achieve. This includes making adjustable artificial waves for themselves through fundraising and lobbying various levels of government.</p>
-
-					<p>“They are doing a lot of really innovative ways of creating new waves,” Billinger said.  “That’s one of the things we’d like to see happen here in Ottawa.”</p>
-
-					<p>Billinger moved to Ottawa in 2010 and wanted to keep surfing — so he searched the internet to see where the good spots were.</p>
-
-					<blockquote>
-						<p>“I was looking up some videos on YouTube and saw there were some videos of people surfing here”</p>
-						<footer>Michael Billinger</footer>
-					</blockquote>
-
-					<p>From there he messaged Michael Crichton, a veteran surfer of the Ottawa River, asking if he could join them when the spring melt occurs.</p>
-
-					<p>“[Crichton] took it upon himself to contact me when that happened and say, ‘hey we’re going, come on out’,” Billinger said.</p>
-
-					<p>Crichton’s been surfing every summer since he was child when his family would take him and his brothers to North Carolina. Despite being so young he said he too could never forget riding his first wave.</p>
-
-					<p>“I absolutely remember my very first wave that I caught,” Crichton said with a laugh. “It was right before dinner the sun was going down… I remember getting up on the wave, standing there, maintaining the balance and being like ‘holy crap I’m surfing.’”</p>
-
-					<p>Crichton continued his love with surfing in Ottawa, taking it to the river. He said he can’t remember the exact time surfing started on the Ottawa River but believes it to be at least 20-25 years ago starting at the Champlain Bridge.</p>
-
-					<p>Steven Perreault, Ottawa River Surfer and employee Surf Side, a surf store in Ottawa, said the first to discover the waves were kayakers.</p>
-
-					<p>“The surfable spots are all by the kayaker’s holes, a standing wave that folds over on itself,” Perreault said.</p>
-
-					<p>A new and growing sport, but one not without its dangers, danger Perreault knows too well.</p>
-
-					<p>“I have some decent little scars and bumps,” Perreault said of his surfing accidents.</p>
-
-					<p>He said there are risks in the river that don’t exist in the oceans, such as rocks when the water level is low as well as floating chunks of ice. Billinger said safety should be the most important component to new surfers and that starts with the right gear.</p>
-
-					<p>“They need the right equipment,” Billinger said. “In terms of wetsuits, gloves and boots… We recommend new surfers wear helmets.”
-					Billinger said he considers himself lucky as he has never had a serious injury from surfing and he credits that to taking the proper precautions.</p>
-
-					<p>Despite the risks, Billinger said being on the river is when the day because it’s when concerns melt away.</p>
-
-					<p>“All the work and stress and everything is just out of your mind when you’re surfing, it’s just relaxing and you’re with your friends,” Billinger said. </p>
-					</div>
-			  </div>
-			</div>
-		</section>
-		<section id="subZero" class="scrollT" data-section-name="sub">
-			<div class="banner"> </div>
-			<h2> Sub Zero Surf Side </h2>
-
-			<div class="container-fluid">
-	  			<div class="row">
-  					<div class="col-md-6 col-md-offset-3" style="position:absolute; max-width:100%; height:100%">
-
-						<p>A customer walks into Surf Side, Ottawa’s only surf store. She isn’t a surfer but a kayaker who plans to travel a river in the Northwest Territories. Although she doesn’t practice what the store is named after, she receives extensive aid from store owner, Alex Millen.</p>
-
-						<p>He helps her find the proper wetsuit for the cold arctic river, listens to her story of past rivers she’s kayaked and shares some of his own stories. She leaves with a new wetsuit and some advice for her upcoming trip. </p>
-
-						<p>Located in the West end of Ottawa is the city’s only surf store, Surf Side.  The store that is going onto 35 years old, was started by Millen and his father Rick.</p>
-
-						<p>Originally a windsurfing shop before embracing all types of board sports, including windsurfing, skateboarding, kiteboarding, waterskiing, wakeboarding and snowboarding.</p>
-
-						<blockquote>
-							<p> “Pretty much anything with the word boarding on the end of it, we do it”</p>
-							<footer>Alex Millen</footer>
-						</blockquote>
-
-						<p>The store has a long history of serving the communities needs for non motorized sports. Surf Side doesn’t look like something that would be found in a city away from the ocean — the walls are covered by various surf company stickers and boards of all kinds. </p>
-
-						<p>“Pretty much your California board shop, we try to keep that vibe,” Millen said. </p>
-
-						<p>Not only does Millen sell the equipment, but he uses it as well. He said he has been surfing for a long time but it’s only in the past two years he began river surfing. </p>
-
-						<p>“Actual surfing, I tried it a few times, never really mastered it, but for the past few years I’ve been doing the Ottawa River standing wave surfing,” Millen said.</p>
-
-						<p>Millen surfs with his coworker Steven Perreault, something Perreault said is convenient, as it’s encouraged not to surf alone. </p>
-
-						<p>The store is stocked up on all the necessary equipment for Ottawa’s River surfers, including wetsuits, gloves, and boots all of which is part of the river surfing attire. The river surfers wear six millimeter thick wetsuits to protect themselves from the cold of the Ottawa River.</p> 
-
-						<p>Perreault explained river surfers need to have all the equipment mentioned as the temperature of the Ottawa River is a major danger when surfing. <br/>
-						The components that make the sport popular are the same as what makes it unpopular — the cost. </p>
-
-						<p>Millen said he enjoyed wakeboarding, but the sport is impossible to do without owning a boat. Although river surfing is cheaper than wakeboarding, it’s still an expensive sport. </p>
-
-						<p>Surf boards range from $300-1000, wetsuits can be between $200-500, a leash that ties the surfer to the board is around $40 and gloves and boots are separately around $50. Making the price to get started, somewhere between $600-1,650. That still doesn’t account for the damage the board is likely to sustain from rocks and ice, a repair costing between $40-100. </p>
-
-						<p>However, Michael Billinger, veteran river surfer said there are ways around this. He said they have a Facebook group where experienced surfers are willing to lend out their equipment for newcomers. Perreault has begun a rental program at Surf Side where people can borrow the appropriate equipment. </p>
-
-						<p>Surf Side has had a large impact on the surf community in Ottawa, providing the surfers with the appropriate equipment. Although they lost one of the most dedicated members this year. Alex Cobb, a longtime worker was instrumental in organizing the first official river surf jam, Ottawa’s first surf competition. Cobb moved to Toronto two months ago, leaving Millen and Perreault to surf alone. </p>
-
-						<p>Millen said he is happy with his stores role in the surfing community, but he understands it isn’t as big as it would be in another area. </p>
-
-						<p>“Obviously if there was an ocean right there and a lot of big waves, there’d be a lot more surf boards,” he said. “Maybe I would’ve retired with a big stack of money.” </p>
-
-				</div>
-			</div>
-		</div>
-
-		</section>
-		<section id="surfJam" class="scrollT" data-section-name="surf">
-			<div class="banner"> </div>
-			<h2> The Second Annual Ottawa Surf Jam </h2>
-
-			<div class="container-fluid">
-	  			<div class="row">
-  					<div class="col-md-6 col-md-offset-3" style="position:absolute; max-width:100%; height:100%">
-
-  						<p>Organizers of the 2016 Ottawa Surf Jam said they are planning on hosting the event once again. </p>
-
-						<p>The First Ever Ottawa Surf Jam took place at Bate Island on April 23, 2016, playing host to around 20 competitors and 200 viewers.</p>
-
-						<p>The event was mainly organized by Alex Cobb, a former employee at Surf Side, but after moving to Toronto, the competitions future came into question. </p>
-
-						<p>However, co-organizers Alex Millen and Steven Perreault, said the event will take place again. </p>
-
-						<blockquote>
-							<p>“We’ve just been in talks with getting one planned around the same time for this year” </p>
-							<footer>Steven Perreault</footer>
-						</blockquote>
-
-						<p>The event was sponsored by several partners including DAVIDsTEA. The competition worked by splitting the surfers into five different heats. The surfers were then granted a block of time — around 25 minutes — where they would attempt as many difficult tricks as the time would allow. </p>
-
-						<p>The surfers were then judged based on degree of difficulty, maximizing usage of the wave and quickness in getting up on the wave. The top two from each heat moved on and the final 10 were worked down until there was only one. </p>
-
-						<p>Ottawa’s Dave Crichton was crowned champion last year, defeating two surfers from Montreal. </p>
-
-						<blockquote>
-							<p>“Dave Crichton is probably the best river surfer in Ottawa”</p>
-							<footer>Alex Millen</footer>
-						</blockquote>
-
-						<p>Crichtons brother Michael gave credit to his brother for his skill in the sport. <br/>
-						“In terms of skill level and degree and difficulty in tricks, he’s kind of head and shoulders above everyone locally,” Michael said. </p>
-
-						<p>Crichton took home a surfboard as the first prize, but Perreault said nobody walked home empty handed, as everyone who competed was awarded with something from a sponsor.</p>
-
-						<p>Michael Billinger, one of the judges from last years tournament said it had a laid back style so he also made sure to take in the amount of fun the surfer had. <br/>
-						“That’s the kind of stuff you want to see because it was the first year and it was a really fun event,” Billinger said.</p>
-
-						<p>Although the various organizers say the event turned out well, the build up for it wasn’t as smooth. The warm winter allowed for high water levels in early spring, but a sudden dry spell almost stopped the competition from taking place. </p>
-
-						<p>Millen said the Bate Island wave disappeared just before the competition but came back in the knick of time. </p>
-
-						“<p>[Bate Island wave] disappeared when our competition was going to be then, but then it miraculously came back,” Millen said. </p>
-
-						<p>Although the competition dodged the low water levels last year, Perreault said he’s not as confident they’ll have the same luck.</p>
-						   
-						<blockquote>
-							<p>“This year much lower water levels, were not actually sure it will happen at Bate”</p>
-							<footer>Steven Perreault</footer>
-						</blockquote>
-
-						<p>He said they will look into other waves to see if they’ll work as well. 
-						Billinger said the surf competition was good in getting the sport some exposure. However he added in order to be recognized they need a prominent member of the sport to compete — but he said Ottawa’s community isn’t there yet. </p>
-
-						<p>“I think really what we’d like to do in terms of competition and exposure, putting us on the map really is get some pros out and see what they can do,” he said.  “But we don’t have the connections yet.” </p>
-  					</div>
-				</div>
-			</div>
-		</section>
-		<section id="communityCuriosity" class="scrollT" data-section-name="community">
-			<div class="banner"> </div>
-
-			<div class="container-fluid">
-	  			<div class="row">
-  					<div class="col-md-6 col-md-offset-3" style="position:absolute; max-width:100%; height:100%">
-						<h2> A Community's Curiosity </h2>
-
-						<p>It was 2000 when a surfer went out to Lake Ontario to ride some waves, once she arrived she found herself alone on the beach. Seventeen years later this would be a pipe dream as Lake Surfing has become overcrowded in Southern Ontario. </p>
-
-						<p>“It’s gotten so crazy that if the wind is right, you go to some of these spots it’s too crowded,” said Michael Crichton, veteran river surfer. </p>
-
-						<p>Crichton said this issue doesn’t exist in Ottawa yet, but the numbers have been rising quickly. He said in 2008 less than a dozen people were surfing in the Ottawa River, that number slowly grew until 2013, since then it shot up to around 50.</p>
-
-						<p>“It’s really starting to get popular in the last two three years,” said Alex Millen, owner of Surf Side and regular river surfer. </p>
-
-						<p>Michael Billinger, veteran surfer, said the increase in numbers influenced him to create a Facebook group to promote safety.The group now has 174 members.</p>
-
-						<blockquote>
-							<p>“We started the Facebook group as a way to get safety information out there because we saw a lot of bad practices”</p>
-							<footer>Michael Billinger</footer>
-						</blockquote>
-
-						<p>Crichton said the most important practices for new surfers to remember is to have the right equipment. </p>
-
-						<p>“It’s very serious,” Crichton said. “If you go out there and get into trouble and you don’t have the right gear on, you could get hypothermia in two minutes.” </p>
-
-						<div id="equipment"></div>
-
-						<p>Crichton also said it’s also important to never surf alone.</p>
-
-						<p>“That’s why we always recommend to people if they’re going to try for the first time, go with other people,” Crichton said. </p>
-
-						<p>Sarah Bureau is one of the new surfers who has been getting her advice from the Facebook group.</p>
-
-						<p>Bureau said she first tried surfing this past summer when she went to New Jersey and learned to ocean surf. When she came back to Ottawa she searched the internet to find out if it would be possible to continue surfing at home. She said she found the Facebook group and then took a river surfing class in Montreal. </p>
-
-						<p>“It was fun, but it was also really hard, the current was really strong, it wasn’t like ocean surfing,” she said. </p>
-
-						<p>Bureau now has all her equipment and is ready to finally try it in the Ottawa River.</p>
-
-						<blockquote>
-							<p>“I’m really excited about this sport, I’ve done nothing like it so it’s really new for me”</p>
-							<footer>Sarah Bureau</footer>
-						</blockquote>
-
-						<p>However, she said she won’t be trying it until the later spring, taking advice from those on the Facebook group and waiting for the water level to rise. </p>
-						 
-						<p>Although Ottawa’s river surfing has only recently started growing in popularity, Crichton said surfing in Montreal has been popular for years. </p>
-
-						<p>“It’s interesting, it was small in Ottawa but in Montreal it had already blown up,” Crichton said.</p> 
-
-						<p>Crichton said Montreal’s water level remains high throughout the year making it accessible in the summer and increasing its popularity. </p>
-
-						<p>“People are out there in bikinis,” Crichton said.</p>
-
-						<p>He added how it’s impossible to surf in the Ottawa River with anything less than a wetsuit as the best time is late winter and early spring. The water level is too low in the summer.  </p>
-
-						<p>Montreal isn’t alone as Billinger said Edmonton’s river surfing community is a registered non-profit organization. The group has managed to lobby various levels of government to create artificial waves. </p>
-
-						<p>Billinger said most cities in Europe also have established river surfing spots as Germany is where the sport originated. </p>
-
-						<p>Billinger said the Ottawa community isn’t at that stage yet, but it isn’t off the table in the future. </p>
-
-						<p>Jody Mitic, Ottawa City Councillor and Sports Commissioner said the sport is a good way of staying active while outside. </p>
-
-						<p>“This sport is a fun and creative way of using the natural environment in a new way to simulate surfing in a region where there is no access to a large body of water like a lake or an ocean for traditional surfing,” Mitic said in an email. </p>
-
-						<p>He added how the competition can be beneficial for Ottawa as it gathers the fans together.</p>
-						 
-						<p>“This competition, like any sporting competition is beneficial to the citizens of Ottawa as it gives individuals who already love the sport to come together and also provides an opportunity for other sport enthusiasts to try something new,” he said. “Ottawa is known for its green space so any area that can be safely used for physical activity is a plus to the city.”</p>
-
-						<p>Although the growth is good for the sport, Billinger and Crichton still worry about overcrowding. They said the lake surfing exemplifies the issue with this. </p>
-
-						<p>“You’re seeing a lot of localism on the lakes, like this is our spot, don’t come here,” Billinger said. </p>
-
-						<p>Crichton said although that hasn’t happened yet, it is the concern. </p>
-
-						<p>“That’s always the issue, if it gets too big, then you might see people getting frustrated with the crowds,” Crichton said. </p>
-
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<script>
-	      var map, marker, marker2, marker3;
-
-	      function initMap() {
-	        var bLatitude = 45.408852;
-	        var bLongitude = -75.756242;
-	        var bateLatLng = {lat: bLatitude, lng: bLongitude};
+    <head>
+        <meta charset="utf-8">
+        <title> Sewer Surfing </title>
+        <link rel="stylesheet" href="./main.css">
+        <link rel="icon" type="image/png" href="Images/favicon.ico">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+        <script src="Script/jquery.scrollify.js"></script>
+        <script src="Script/bodymovin.js"></script>
+        <script src="Script/navigation.js"></script>
+    </head>
+
+    <body onunload="backToTop()" onload="banners()">
+
+        <div id="splash"><img class="logo" src="Images/Logo.png"/></div>
+        <div class="navigation">
+            <span class="mainPages">
+                <div class="row">
+                    <div class="col-md-5">
+                        <span class="michaelsStory">The History of the Wave</span>
+                        <span class="subZero">Subarctic Surf Side</span>
+                    </div>
+                    <div class="col-md-2"></div>
+                    <div class="col-md-5">
+                        <span class="surfJam">Ottawa Surf Jam</span>
+                        <span class="communityCuriosity">A Community's Curiosity</span>
+                    </div>
+                </div>
+            </span>
+        </div>
+
+        <section id="homePage" class="scrollT" data-section-name="home">
+            <h1> Sewer &nbsp; Surfing </h1>
+            <h3> Surfing on the Ottawa River</h3>
+            <div class="scrollDown"><div class="bounce"> <img src="Images/arrow.png" class="arrow" /></div></div>
+            <p class="credit"> Video courtesy of <a href="https://www.youtube.com/channel/UCwr3SxwoR0PcpWZaX0trkNQ" target="_blank">Skyward Kick Production Blog</a></p>
+            <div id="transparentBG"></div>
+            <video playsinline autoplay muted loop id="bgvid">
+                <source src="Videos/homePage.webm" type="video/webm">
+                <source src="Videos/homePage.mp4" type="video/mp4">
+            </video>
+        </section>
+        <section id="michaelsStory" class="scrollT" data-section-name="michael">
+            <div id="michaelsBanner" class="banner"></div>
+            <h2> The History of the Wave </h2>
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3" style="position:absolute; max-width:100%; height:100%">
+
+                        <p>Michael Billinger walks to the edge of the water. It’s minus 15 degrees Celsius — freezing to most — but the water level is high and that’s all that matters to him.</p>
  
-	        var rLatitude = 45.419772;
-	        var rLongitude = -75.737663;
-	        var remicRapidsLatLng = {lat: rLatitude, lng: rLongitude};
+                        <p>He steps into the Ottawa River, holding his surf board by his side, takes three steps and launches himself, stomach flat to the board while he paddles out.</p>
+                         
+                        <p>He holds onto the wake cord and pulls himself up until he has his balance, then lets go — he’s riding the sewer wave.</p>
+                         
+                        <p>The sewer wave is one of three major waves Ottawa river surfers ride, located on the Gatineau side of the Ottawa River. Its name comes from the running water splashing over a sewer drain near the shore.</p>
+                         
+                        <p>The sewer wave is the easiest, one that beginners love. Its proximity to the shore makes it the most accessible to amateurs.</p>
+                         
+                        <p>Along with the sewer wave, there is Bate Island, also referred to as the Champlain Bridge wave. Billinger says the Bate Island wave is for experts only, as it is the most difficult.</p>
+                         
+                        <p>The final wave is the desert wave, also known as “dessert wave.” Billinger says it is called dessert because it’s formed from the rolling rapids of the Bate Island, and is almost like a treat after the main “meal” at Bate.</p>
 
-	        var oLatitude = 45.410171;
-	        var oLongitude = -75.745505;
-	        var otherSurfing = {lat: oLatitude, lng: oLongitude}
+                        <div id="map"></div>
+                         
+                        <p>“It’s like icing on the cake, because it’s a really big nice wave,” he says.</p>
+                         
+                        <p>Billinger is one of the veterans who surf the Ottawa River, discovering it six years ago. However, his surfing journey didn’t start in Ottawa. It didn’t even start in North America.</p>
 
-	        map = new google.maps.Map(document.querySelector('#map'), {
-	          center: {lat: 45.415078, lng: -75.746514},
-	          zoom: 14
-	        });
+                        <p>Billinger learned to surf in Argentina, and he still remembers his first wave he rode — he says the feeling was irreplaceable.</p>
+                         
+                        <p>“Especially when you get one on your own, you’re just hooked, just totally hooked,” Billinger says with a smile.</p>
+                         
+                        <p>The sport was first documented in Munich, Germany in the 1970s. The city embraces this history with a wave at the airport that passengers can surf on.</p>
+                         
+                        <p>Billinger says river and ocean surfing have similarities and differences, all determined by the geography. The ocean has recurring waves, but river surfing relies on one constantly forming wave. Balance on the board is a similarity, but the difference is that while you are in one spot the whole time in the river, you’re constantly moving in the ocean.</p>
 
-	        var contentString = '<div id="content">'+
-            '<div id="siteNotice">'+
-            '</div>'+
-            '<h1 id="firstHeading" class="firstHeading">Bate Island</h1>'+
-            '<div id="bodyContent">'+
-            '<img src="Images/bateIsland.jpg" class="popUpImg" />' +
-             '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum lacinia tortor at ipsum ultrices luctus vitae eu massa. Ut felis ante, vestibulum sit amet purus et, tincidunt consequat massa. Donec eleifend vel neque sed eleifend. Duis tincidunt gravida purus, sed hendrerit dolor ornare eu. Donec fermentum et orci ac consectetur. Nullam consequat dui et eleifend scelerisque. Vivamus mattis lectus vitae justo blandit accumsan. Duis vel massa blandit, cursus arcu vitae, sagittis metus.</p>'+
-            '</div>'+
-            '</div>';
+                        <p>Billinger then moved to Edmonton, where he was surprised to find he could continue surfing.</p>
+                         
+                        <p>“There’s a really dedicated surf community in Edmonton,” he says.</p>
+                         
+                        <p>Billinger says it isn’t just in Edmonton, it’s individuals throughout Alberta that are devoted to river surfing. This includes making adjustable artificial waves in Calgary through fundraising and lobbying various levels of government.</p>
 
-	        var infowindow = new google.maps.InfoWindow({
-	          content: contentString
-	        });
+                        <p>“They are doing a lot of really innovative ways of creating new waves,” Billinger says.  “That’s one of the things we’d like to see happen here in Ottawa.”</p>
 
-	        marker = new google.maps.Marker({
-	          position: bateLatLng,
-	          map: map,
-	          title: 'Bate Island'
-	        });
+                        <p>Alberta’s surf community is part of an official group, The Alberta River Surfing Association (ARSA). Being an organization, the ARSA has uniform safety regulations and scheduled surf times.</p>
 
-	        marker.addListener('click', function() {
-	          infowindow.open(map, marker);
-	        });
+                        <p>Billinger moved to Ottawa in 2010 and wanted to keep surfing, so he searched the internet to find good spots.</p>
+                         
+                        <blockquote>
+                            <p>“I was looking up some videos on YouTube and saw there were some videos of people surfing here”</p>
+                            <footer>Michael Billinger</footer>
+                        </blockquote>
+                         
+                        <p>From there he messaged Michael Crichton, a veteran Ottawa River surfer, asking to join him when the spring melt occurred.</p>
+                         
+                        <p>“[Crichton] took it upon himself to contact me when that happened and say, ‘Hey we’re going, come on out,’ ” Billinger says.</p>
+                         
+                        <p>Crichton’s been surfing every summer since he was a child, when his family would take him and his brothers to North Carolina.</p>
+                         
+                        <p>“I absolutely remember my very first wave that I caught,” Crichton says with a laugh. “It was right before dinner, the sun was going down… I remember getting up on the wave, standing there, maintaining the balance and being like, ‘holy crap, I’m surfing.’”</p>
+                         
+                        <p>Crichton took his love of surfing to the Ottawa River. He says he can’t remember the exact time surfing started on the river, but believes it to be at least 20-25 years ago at the Champlain Bridge.</p>
+                         
+                        <p>Steven Perreault, Ottawa River surfer and employee at Surf Side, Ottawa’s only surf store, says the first to discover the waves were kayakers.</p>
+                         
+                        <p>“The surfable spots are all by the kayaker’s holes, [which are] a standing wave that folds over on itself,” Perreault says.</p>
+                         
+                        <p>A new and growing sport, but one not without its dangers. Perreault says he has received several injuries from river surfing, but nothing serious.</p>
+                         
+                        <p>“I have some decent little scars and bumps ,” Perreault says of his surfing accidents.</p>
+                         
+                        <p>He says there are risks in the river that don’t exist in the oceans, such as rocks when the water level is low, as well as floating chunks of ice. Billinger says safety should be the most important component to new surfers, and that starts with the right gear.</p>
+                         
+                        <p>“They need the right equipment,” Billinger says. “In terms of wetsuits, gloves and boots… We recommend new surfers wear helmets.”</p>
 
-	        marker2 = new google.maps.Marker({
-	        	position: remicRapidsLatLng,
-	        	map: map,
-	        	title: 'Remic Rapids'
-	        });
+                        <p>Although talking up the equipment may sound like a sales pitch, Billinger says when in cold water hypothermia can set in a matter of minutes and only the proper equipment can prevent that.</p>
 
-	       	marker2.addListener('click', function() {
-	          alert("Remic Rapids");
-	        });
+                        <p>Crichton says new surfers must also ensure the water level is high enough, as when it’s too low there is a large possibility of hitting rocks. </p>
 
-	        marker3 = new google.maps.Marker({
-	        	position: otherSurfing,
-	        	map: map,
-	        	title: 'Other'
-	        });
+                        <p>Billinger says he considers himself lucky, as he has never had a serious injury from surfing. He credits that to taking the proper precautions.</p>
+                         
+                        <p>Despite the risks, Billinger says surfing on the river is his favourite part of the day.</p>
+                         
+                        <p>“All the work and stress and everything is just out of your mind when you’re surfing, it’s just relaxing and you’re with your friends,” Billinger says.</p>
+                    </div>
+              </div>
+            </div>
+        </section>
+        <section id="subZero" class="scrollT" data-section-name="sub">
+            <div id="subZeroBanner" class="banner"></div>
+            <h2> Subarctic Surf Side </h2>
 
-	        marker3.addListener('click', function() {
-	          alert("Other");
-	        });
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3" style="position:absolute; max-width:100%; height:100%">
 
-	      }
+                        <p>A customer walks into Surf Side, Ottawa’s only surf store. She isn’t a surfer, but a kayaker who plans to travel a river in the Northwest Territories. Although she doesn’t practice what the store is named after, she receives extensive aid from store owner, Alex Millen.</p>
 
-	    </script>
-	    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZZl90454rKH8f8VQINMkmtctRfEhrI6k&callback=initMap"
-	    async defer></script>
-	</body>
+                        <p>He helps her find the proper wetsuit for the cold Arctic river, listens to her story of past rivers she’s kayaked and shares some of his own stories. She leaves with a new wetsuit and some advice for her upcoming trip.</p>
+
+                        <p>Located in the west end of Ottawa, Surf Side is 35 years old, started by Millen and his father Rick.</p>
+
+                        <p>Originally a windsurfing shop it embraces all types of board sports, including windsurfing, skateboarding, kiteboarding, waterskiing, wakeboarding and snowboarding.</p>
+
+                        <blockquote>
+                            <p> “Pretty much anything with the word boarding on the end of it, we do it”</p>
+                            <footer>Alex Millen</footer>
+                        </blockquote>
+
+                        <p>The store has a long history of serving non-motorized sports. Surf Side doesn’t look like something that would be found in a city away from the ocean — the walls are covered by various surf company stickers and boards of all kinds.</p>
+
+                        <p>“[It’s] pretty much your California board shop. We try to keep that vibe,” Millen says.</p>
+
+                        <p>Not only does Millen sell the equipment, he uses it as well. He has been surfing for a long time, but it’s only in the past two years that he began river surfing.</p>
+
+                        <p>“Actual surfing, I tried it a few times, never really mastered it, but for the past few years I’ve been doing the Ottawa River standing wave surfing,” Millen says.</p>
+
+                        <p>Millen surfs with his co-worker Steven Perreault, something Perreault says is convenient, as it’s best not to surf alone.</p>
+
+                        <p>The store is stocked with the necessary equipment for Ottawa’s river surfers, including wetsuits, gloves, and boots. River surfers wear six-millimeter-thick wetsuits to protect themselves from the cold.</p>
+
+                        <p>Perreault explains river surfers need the equipment because temperature is a major danger when surfing.</p>
+
+                        <p>However there is an issue preventing all surfers from owning proper equipment — the cost.</p>
+
+                        <p>Millen says he enjoyed wakeboarding, but the sport is impossible to do without owning a boat. Although river surfing is cheaper, it’s still expensive.</p>
+
+                        <p>Surf boards range from $300-1000.</p>
+
+                        <p>Wetsuits can be between $200-500.</p>
+
+                        <p>A leash that ties the surfer to the board is around $40 and gloves and boots are sold separately for around $50.</p>
+
+                        <p>The price to get started is somewhere between $600-$1,650.</p>
+
+                        <p>That doesn’t cover the damage the board is likely to sustain from rocks and ice, which would cost $40-100 to repair.</p>
+
+                        <p>However, veteran river surfer Michael Billinger says there are ways around this. Members of a Facebook group of experienced surfers are willing to lend their equipment to newcomers. Perreault has also begun a rental program at Surf Side.</p>
+
+                        <p>The store has had a large impact on the surf community in Ottawa.</p>
+
+                        <p>Millen is happy with his store’s role in the surfing community, but understands it would be bigger in another area.</p> 
+
+                        <p>“Obviously if there was an ocean right there and a lot of big waves, there’d be a lot more surf boards,” he says. “Maybe I would’ve retired with a big stack of money.”</p>
+
+                </div>
+            </div>
+        </div>
+
+        </section>
+        <section id="surfJam" class="scrollT" data-section-name="surf">
+            <div id="surfJamBanner" class="banner"></div>
+            <h2> Second Annual Surf Jam to be Scheduled for April</h2>
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3" style="position:absolute; max-width:100%; height:100%">
+
+                        <p>Last year, Ottawa hosted its first river competition, called the First Annual River Surf Jam at Bate Island. Various competitors and organizers consider the competition to be an important part of building up the surf community.</p>
+
+                        <p>Organizers of the 2016 Ottawa Surf Jam says they are planning to host the event once again.</p>
+                         
+                        <p>The First Ever Ottawa Surf Jam took place at Bate Island on April 23, 2016, with around 20 competitors and 200 spectators.</p>
+
+                        <blockquote>
+                            <p>“We’ve just been in talks with getting one planned around the same time for this year” </p>
+                            <footer>Steven Perreault</footer>
+                        </blockquote>
+                         
+                        <p>The competition split the surfers into five different heats. They were granted a block of time — around 25 minutes — to attempt as many difficult tricks as the time allowed.</p>
+                         
+                        <p>The surfers were judged based on degree of difficulty, maximizing usage of the wave, and quickness in getting up on the wave. The top two from each heat moved on, and the final 10 whittled down until there was a winner.</p>
+                         
+                        <p>Ottawa’s Dave Crichton, brother to Michael Crichton, defeated two surfers from Montreal.</p>
+
+                        <blockquote>
+                            <p>“Dave Crichton is probably the best river surfer in Ottawa”</p>
+                            <footer>Alex Millen</footer>
+                        </blockquote>
+
+                        <p>Crichton’s brother Michael credits him for his skill in the sport.</p>
+                         
+                        <p>“In terms of skill level and degree of difficulty in tricks, he’s kind of head and shoulders above everyone locally,” Michael says.</p>
+                         
+                        <p>Crichton took home a surfboard as first prize, but Perreault says nobody left empty handed, as everyone received something from a sponsor, such as a gift card or waterbottle. </p>
+                         
+                        <p>Michael Billinger, one of the judges from last year’s tournament, says it had a laidback style so he also made sure to take in the amount of fun the surfer had. He credits one surfer for trying tricks way out of his comfort zone.</p>
+                         
+                        <p>“That’s the kind of stuff you want to see because it was the first year and it was a really fun event,” Billinger says.</p>
+                         
+                        <p>But there were some challenges. The warm winter allowed for high water levels in early spring, but a sudden dry spell almost stopped the competition.</p>
+                         
+                        <p>“[Bate Island wave] disappeared when our competition was going to be, but then it miraculously came back,” Millen says.</p>
+                         
+                        <p>The wave at Bate Island disappeared a few days before the scheduled competition, but reappeared the day before. Perreault says he’s not as confident they’ll have the same luck a second time.</p>
+
+                        <blockquote>
+                            <p>“This year [has seen] much lower water levels, we’re not actually sure it will happen at Bate"</p>
+                            <footer>Steven Perreault</footer>
+                        </blockquote>
+                         
+                        <p>They say they will consider other waves to see if they’ll work as well for the Surf Jam. Billinger says the surf competition got the sport some exposure, but they need more prominent competitors. Unfortunately, he says Ottawa’s community isn’t there yet.</p>
+                         
+                        <p>“I think really what we’d like to do in terms of competition and exposure, putting us on the map really is get some pros out and see what they can do,” he says.  “But we don’t have the connections yet.”</p>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="communityCuriosity" class="scrollT" data-section-name="community">
+            <div class="banner" id="communityBanner"> </div>
+            <h2> A Community’s Curiosity </h2>
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3" style="position:absolute; max-width:100%; height:100%">
+                        
+                        <p>The Toronto Star recently published an article about a community that surfs in Lake Ontario throughout the winter months. The story talks about the increase in popularity, but it doesn’t mention the issues attached to this growth.</p>
+
+                        <p>Michael Crichton, a veteran river surfer in Ottawa, says lake surfing in southern Ontario has gotten so popular it’s become overcrowded.</p>
+
+                        <p>“It’s gotten so crazy that if the wind is right, you go to some of these spots and it’s too crowded,” says Michael Crichton.</p>
+                         
+                        <p>Crichton says that’s not a problem in Ottawa yet, but the numbers have been rising. In 2008, less than a dozen people were surfing the Ottawa River—that number is now around 50.</p>
+                         
+                        <p>“It’s really starting to get popular in the last two, three years,” says Alex Millen.</p>
+                        
+                        <p>Michael Billinger says the growth led him to create a Facebook group. It now has 174 members.</p>
+
+                        <blockquote>
+                            <p>“We started the Facebook group as a way to get safety information out there because we saw a lot of bad practices”</p>
+                            <footer>Michael Billinger</footer>
+                        </blockquote>
+                         
+                        <p>These bad practices include not using the proper equipment, going out when the water level is too low and surfing alone.</p>
+
+                        <p>Crichton says the right equipment is the most important concern for new surfers.</p>
+                         
+                        <p>“It’s very serious,” Crichton says. “If you go out there and get into trouble and you don’t have the right gear on, you could get hypothermia in two minutes.”</p>
+
+                        <div id="equipment"></div>
+                         
+                        <p>Crichton also says it’s important never to surf alone.</p>
+                         
+                        <p>“That’s why we always recommend to people, if they’re going to try river surfing for the first time, go with other people,” Crichton says.</p>
+                         
+                        <p>Sarah Bureau is a new surfer attracted by the Facebook group.</p>
+                         
+                        <p>Bureau first tried ocean surfing in 2016 when she went to New Jersey. Back in Ottawa, she searched the internet to find out if she could surf at home. She found the Facebook group, and took a river surfing class in Montreal.</p>
+                         
+                        <p>“It was fun, but it was also really hard. The current was really strong. It wasn’t like ocean surfing,” she says.</p>
+
+                        <p>She says the differences between river and ocean surfing are in the wave. Ocean surfing you’re always moving whereas river surfing you’re in one spot.</p>
+                         
+                        <p>Bureau now has all her equipment and is finally ready to try it in the Ottawa River.</p>
+
+                        <blockquote>
+                            <p>“I’m really excited about this sport, I’ve done nothing like it so it’s really new for me”</p>
+                            <footer>Sarah Bureau</footer>
+                        </blockquote>
+                         
+                        <p>However, she won’t be trying it until the later spring, taking advice from those on the Facebook group and waiting for the water level to rise.</p>
+                         
+                        <p>While Ottawa’s river surfing only recently started growing in popularity, Montreal is different.</p>
+                         
+                        <p>“It’s interesting, it was small in Ottawa but in Montreal it had already blown up,” Crichton says.</p>
+                         
+                        <p>Crichton says this is likely because of Quebec’s proximity to the ocean, but also in the water level. Montreal’s water level on the St. Lawrence remains high throughout the year, making it accessible in the summer and increasing its popularity.</p>
+                         
+                        <p>“People are out there in bikinis,” Crichton says.</p>
+                         
+                        <p>Montreal isn’t alone, as Billinger says Alberta’s river surfing community, the Alberta River Surfing Association, has a well organized system. The group has managed to lobby various levels of government to create artificial waves.</p>
+                         
+                        <p>Billinger says most cities in Europe have also established river surfing spots, as the sport originated in Germany.</p>
+                         
+                        <p>Billinger says the Ottawa community isn’t at that stage yet, but it isn’t off the table in the future. The sport hasn’t gone unnoticed by the city’s politicians.</p>
+                         
+                        <p>Jody Mitic, Ottawa City Councillor and Sports Commissioner says the sport is a good way of staying active while outside.</p>
+                         
+                        <p>“This sport is a fun and creative way of using the natural environment in a new way to simulate surfing in a region where there is no access to a large body of water, like a lake or an ocean for traditional surfing,” Mitic says in an email.</p>
+                         
+                        <p>He adds how the competition is a good way to bring outdoor enthusiasts together.</p>
+                         
+                        <p>“This competition, like any sporting competition, is beneficial to the citizens of Ottawa as it gives individuals who already love the sport to come together. [It] also provides an opportunity for other sport enthusiasts to try something new,” he says. “Ottawa is known for its green space, so any area that can be safely used for physical activity is a plus to the city.”</p>
+                         
+                        <p>Although the growth is good for the sport, Billinger and Crichton still worry about overcrowding. They say Toronto’s lake surfing exemplifies the issue with this.</p>
+                         
+                        <p>“You’re seeing a lot of localism on the lakes, like ‘this is our spot, don’t come here,’ ” Billinger says. “That’s always the issue, if it gets too big, then you might see people getting frustrated with the crowds.”</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <script src="Script/surfingMap.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZZl90454rKH8f8VQINMkmtctRfEhrI6k&callback=initMap"
+        async defer></script>
+
+        <script src="Script/banners.js"></script>
+    </body>
 </html>
