@@ -315,22 +315,22 @@ section {
 
 #ropeInfo {
 	right:-180px;
-	top:-90px;
+	top:-120px;
 }
 
 #leashInfo {
 	right:-175px;
-	top:100px;
+	top:70px;
 }
 
 #glovesInfo{
 	right:50px;
-	top:275px;
+	top:255px;
 }
 
 #bootsInfo {
 	right:-175px;
-	top:265px;
+	top:245px;
 }
 
 #boardInfo:after {
@@ -406,7 +406,7 @@ section {
 }
 
 #gloves:hover{
-	width:85%;
+	width:80%;
 }
 
 #boots:hover{
