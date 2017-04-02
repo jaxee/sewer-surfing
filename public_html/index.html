@@ -23,7 +23,11 @@
             $(document).ready(function() {  
                 console.log("doc ready");
                 $(window).on('load', function(){
-                    console.log("loaded");
+                    $.scrollify.move("#home");
+                    $('.navigation').fadeOut(300);
+                    $('.navigation').css("display", "none");
+                    $('.logo').fadeOut(300);
+                    $('.logo').css("display", "none")
                     $('#preloader').fadeOut('slow',function(){$(this).remove();});
                 });
             });
