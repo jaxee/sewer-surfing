@@ -33,7 +33,7 @@ function initMap() {
   '</div>'+
   '<h1 id="firstHeading" class="firstHeading">Sewer Wave</h1>'+
   '<div id="bodyContent">'+
-  '<img src="Images/bateIsland.jpg" class="popUpImg" />' +
+  '<img src="Images/sewerWave.jpg" class="popUpImg" />' +
   '<p> The sewer wave is formed by a sewage drain near the Gatineau shore. It is the easiest of the waves, also the easiest to reach being the closest to the shore. This is typically for the beginners. </p>' +
   '</div>'+
   '</div>';
@@ -43,7 +43,7 @@ function initMap() {
   '</div>'+
   '<h1 id="firstHeading" class="firstHeading">Dessert Wave</h1>'+
   '<div id="bodyContent">'+
-  '<img src="Images/bateIsland.jpg" class="popUpImg" />' +
+  '<img src="Images/remicRapids.jpg" class="popUpImg" />' +
    '<p>The desert wave, also known as “dessert wave” is formed by the rolling rapids that form off of Bate Island. This is known as an intermediate wave, but a difficult one to reach being further out into the river. </p>'+
   '</div>'+
   '</div>';

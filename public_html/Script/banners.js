@@ -14,7 +14,7 @@ function banners(){
         rendererSettings: {
             progressiveLoad:false
         },
-        path: 'Banners/data.ShopBanner.json'
+        path: 'Banners/joshBanner01.json'
     }
 
     var subZero = {
@@ -36,7 +36,7 @@ function banners(){
         rendererSettings: {
             progressiveLoad:false
         },
-        path: 'Banners/data.ShopBanner.json'
+        path: 'Banners/joshBanner02.json'
     }
 
     var community = {
@@ -47,7 +47,7 @@ function banners(){
         rendererSettings: {
             progressiveLoad:false
         },
-        path: 'Banners/data.CommunityBanner.json'
+        path: 'Banners/data.test.json'
     };
 
     bannerOne = bodymovin.loadAnimation(michael);

@@ -1,6 +1,11 @@
 $( document ).ready(function() {
     var sections = ["michaelsStory", "subZero", "surfJam", "communityCuriosity"];
     $(".michaelsStory").addClass("selected");
+
+    $(".arrow").click(function() {
+        $.scrollify.move("#michael");
+    });
+
     $("#splash").click(function() {
         $.scrollify.move("#home");
     });
@@ -16,20 +21,37 @@ $( document ).ready(function() {
     $(".communityCuriosity").click(function() {
         $.scrollify.move("#community");
     });
+
+
     $(function backToTop() {
         $('.navigation').css("display", "none");
         $('.logo').css("display", "none");
         window.location.replace("http://localhost:4005/#home");
     });
+
+
     $(function() {
         $.scrollify({
             section : ".scrollT",
             sectionName : "section-name",
-            after:function() {
+            before:function() {
                 var current = $.scrollify.current();
+                console.log(current[0].id);
+
+                if (current[0].id == "homePage") {
+                        $('.navigation').fadeOut(300);
+                        $('.navigation').css("display", "none");
+                        $('.logo').fadeOut(300);
+                        $('.logo').css("display", "none")
+                } else {
+                    $('.navigation').fadeIn(500);
+                    $('.logo').fadeIn(500);
+                }
+
                 changeNav(current[0].id);
             }
         });
+
         function changeNav(scrolledID){
             for(var i in sections){
                 var el = document.getElementsByClassName(sections[i]);
@@ -41,26 +63,26 @@ $( document ).ready(function() {
                 $(el).removeClass("selected");
             }
         }
-        $(function() {
-            $(window).scroll(function() {
-                var current = $.scrollify.current();
-                if (current[0].id == "home") {
-                        $('.navigation').fadeOut(300);
-                        $('.navigation').css("display", "none");
-                        $('.logo').fadeOut(300);
-                        $('.logo').css("display", "none")
-                } else {
-                    if($(this).scrollTop() >= 500) {
-                        $('.navigation').fadeIn(500);
-                        $('.logo').fadeIn(500);
-                    } else {
-                        $('.navigation').fadeOut(300);
-                        $('.navigation').css("display", "none");
-                        $('.logo').fadeOut(300);
-                        $('.logo').css("display", "none")
-                    }
-                }
-            });
-        });
+        // $(function() {
+        //     $(window).scroll(function() {
+        //         var current = $.scrollify.current();
+        //         if (current[0].id == "home") {
+        //                 $('.navigation').fadeOut(300);
+        //                 $('.navigation').css("display", "none");
+        //                 $('.logo').fadeOut(300);
+        //                 $('.logo').css("display", "none")
+        //         } else {
+        //             if($(this).scrollTop() >= 500) {
+        //                 $('.navigation').fadeIn(500);
+        //                 $('.logo').fadeIn(500);
+        //             } else {
+        //                 $('.navigation').fadeOut(300);
+        //                 $('.navigation').css("display", "none");
+        //                 $('.logo').fadeOut(300);
+        //                 $('.logo').css("display", "none")
+        //             }
+        //         }
+        //     });
+        // });
     });
 });

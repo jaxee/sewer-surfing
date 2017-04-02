@@ -15,6 +15,10 @@ h2 {
 	margin-bottom:30px !important;
 }
 
+p {
+	font-size:16px;
+}
+
 a {
 	text-decoration:underline !important;
 }
@@ -52,6 +56,18 @@ a {
 @font-face {
     font-family: 'subTitle';
     src: url('Fonts/Surface-Medium.otf');
+}
+
+div#preloader {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  background: #333 url("http://files.mimoymima.com/images/loading.gif") no-repeat center center;
+  z-index: 99999999; 
 }
 
 #splash{
@@ -120,7 +136,7 @@ section {
 
 .scrollDown {
 	position:absolute;
-	top:75%;
+	top:80%;
 	left:49%;
 }
 
@@ -130,7 +146,6 @@ section {
   bottom:0px;
   margin-top:-25px;
   margin-left:-25px;
-  height:100px;
   width:100px;
   color:white;
   z-index:9996;
@@ -139,6 +154,16 @@ section {
 
 .arrow {
 	width:70%;
+}
+
+.arrow:hover{
+	filter:opacity(40%);
+}
+
+#mpBanners{
+	margin-top:65px;
+	width:100%;
+	height:auto;
 }
 
 #homePage h1{
@@ -210,7 +235,7 @@ section {
 
 #michaelsStory {
 	background-color:white;
-	height:3150px !important;
+	height:4400px !important;
 }
 
 #paragraphVid{
@@ -234,13 +259,13 @@ section {
 
 .popUpImg {
 	float:left;
-	width:20%;
-	margin-right:20px;
+	width:40%;
+	margin-right:10px;
 }
 
 #subZero {
 	background-color:white;
-	height:2800px !important;
+	height:3100px !important;
 }
 
 #equipment {
@@ -288,7 +313,13 @@ section {
 
 #communityCuriosity {
 	background-color:white;
-	height:2600px !important;
+	height:3700px !important;
+}
+
+hr {
+	border-top:2px solid darkgrey !important;
+	margin-top:30px !important;
+	margin-bottom:30px !important;
 }
 
 .info {
@@ -315,22 +346,22 @@ section {
 
 #ropeInfo {
 	right:-180px;
-	top:-120px;
+	top:-80px;
 }
 
 #leashInfo {
 	right:-175px;
-	top:70px;
+	top:10px;
 }
 
 #glovesInfo{
 	right:50px;
-	top:255px;
+	top:290px;
 }
 
 #bootsInfo {
 	right:-175px;
-	top:245px;
+	top:275px;
 }
 
 #boardInfo:after {
@@ -420,17 +451,53 @@ section {
     overflow: hidden;
     transform: translate3d(0,0,0);
     margin: auto;
+    margin-top:65px;
 }
 
 .botas_loop_3,.botas_loop_2{
     display:none
 }
 
-@media screen and (max-device-width: 800px) {
-    html {
-         /*background: url(polina.jpg) #000 no-repeat center center fixed;*/
+#screenWarning {
+	display:none;
+	background-color:grey;
+	color:black;
+	text-align:center;
+	width:100%;
+	height:100%;
+}
+
+.inlineImg{
+	float:left;
+	margin-right:20px;
+}
+
+.fullImg {
+	margin:auto auto;
+	display:block;
+	margin:20px;
+}
+
+.carousel{
+	margin:auto auto;
+	display:block;
+}
+
+.surfingSteps{
+	margin-top:50px;
+}
+
+.pageContent {
+	display:block;
+}
+
+@media screen and (max-width: 1310px) {
+    #screenWarning {
+    	position:fixed;
+    	display:block;
     }
-    #bgvid {
-        display: none;
+
+    .pageContent {
+    	display:none;
     }
 }
