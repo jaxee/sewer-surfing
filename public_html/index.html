@@ -20,15 +20,17 @@
         <script src="Script/equipmentDiagram.js"></script>
 
         <script type="text/javascript">
-            jQuery(document).ready(function($) {  
+            $(document).ready(function() {  
+                console.log("doc ready");
                 $(window).on('load', function(){
+                    console.log("loaded");
                     $('#preloader').fadeOut('slow',function(){$(this).remove();});
                 });
             });
         </script>
     </head>
 
-    <body onunload="backToTop()" onload="banners()">
+    <body onload="banners()">
         <div id="preloader"></div>
 
         <div id="screenWarning"><h1>This website is meant to be experienced on a desktop. Thank you.</h1></div>

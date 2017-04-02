@@ -43,7 +43,7 @@ function initMap() {
   '</div>'+
   '<h1 id="firstHeading" class="firstHeading">Dessert Wave</h1>'+
   '<div id="bodyContent">'+
-  '<img src="Images/remicRapids.jpg" class="popUpImg" />' +
+  '<img src="Images/remicrapids.jpg" class="popUpImg" />' +
    '<p>The desert wave, also known as “dessert wave” is formed by the rolling rapids that form off of Bate Island. This is known as an intermediate wave, but a difficult one to reach being further out into the river. </p>'+
   '</div>'+
   '</div>';

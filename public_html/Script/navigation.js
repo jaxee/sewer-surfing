@@ -22,14 +22,6 @@ $( document ).ready(function() {
         $.scrollify.move("#community");
     });
 
-
-    $(function backToTop() {
-        $('.navigation').css("display", "none");
-        $('.logo').css("display", "none");
-        window.location.replace("http://localhost:4005/#home");
-    });
-
-
     $(function() {
         $.scrollify({
             section : ".scrollT",
