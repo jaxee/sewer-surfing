@@ -47,7 +47,7 @@ function banners(){
         rendererSettings: {
             progressiveLoad:false
         },
-        path: 'Banners/data.test.json'
+        path: 'Banners/CommunityBanner.json'
     };
 
     bannerOne = bodymovin.loadAnimation(michael);
