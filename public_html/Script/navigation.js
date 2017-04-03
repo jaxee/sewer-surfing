@@ -28,7 +28,6 @@ $( document ).ready(function() {
             sectionName : "section-name",
             before:function() {
                 var current = $.scrollify.current();
-                console.log(current[0].id);
 
                 if (current[0].id == "homePage") {
                         $('.navigation').fadeOut(300);
