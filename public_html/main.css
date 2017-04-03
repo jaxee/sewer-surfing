@@ -491,6 +491,11 @@ hr {
 	display:block;
 }
 
+.price {
+	font-size:18px;
+	text-decoration: underline;
+}
+
 @media screen and (max-width: 1310px) {
     #screenWarning {
     	position:fixed;
